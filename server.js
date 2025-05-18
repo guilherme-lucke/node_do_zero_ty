@@ -59,7 +59,11 @@ server.delete("/videos/:id", async (request, reply) => {
   });
 });
 
-server.listen({
-  host: "0.0.0.0",
-  port: process.env.PORT ?? 3333,
-});
+server
+  .listen({
+    host: "0.0.0.0",
+    port: process.env.PORT ?? 3333,
+  })
+  .then((address) => {
+    console.log(`Server running at ${address}`);
+  });
